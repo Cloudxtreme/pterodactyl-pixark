@@ -14,7 +14,7 @@ RUN         dpkg --add-architecture i386 && \
             apt install -y wget software-properties-common apt-transport-https lib32gcc1  && \
             wget https://dl.winehq.org/wine-builds/Release.key && \
             apt-key add Release.key -y && \
-            apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' -y
+            apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/' -y && \
             apt update && \
             apt install -y winehq-stable && \
             apt clean && \
