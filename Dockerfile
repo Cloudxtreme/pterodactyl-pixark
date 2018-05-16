@@ -11,11 +11,10 @@ MAINTAINER  Kenny B, <kenny@venatus.digital>
 RUN         dpkg --add-architecture i386 \
             && apt update \
             && apt upgrade -y \
-            && apt install -y wget software-properties-common apt-transport-https bsdtar dos2unix \
-            && wget -qO - https://dl.winehq.org/wine-builds/Release.key | apt-key add - \
-            && apt-add-repository https://dl.winehq.org/wine-builds/ubuntu/ \
+            && apt install -y wget software-properties-common apt-transport-https \
+            && add-apt-repository -y ppa:wine/wine-builds \
             && apt update \
-            && apt install -y --install-recommends winehq-stable \
+            && apt install -y wine64 \
             && apt clean \
             && useradd -d /home/container -m container \
             && cd /home/container
