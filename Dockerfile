@@ -3,10 +3,9 @@
 # Environment: Ubuntu:16.04 + Wine
 # Minimum Panel Version: 0.7.6
 # ----------------------------------
-FROM        ubuntu:16.04
+FROM        ubuntu:latest
 
 MAINTAINER  Kenny B, <kenny@venatus.digital>
-ENV         DEBIAN_FRONTEND noninteractive
 
 # Install Dependencies
 RUN         dpkg --add-architecture i386 \
@@ -18,7 +17,7 @@ RUN         dpkg --add-architecture i386 \
             && apt update \
             && apt install -y --install-recommends winehq-stable \
             && apt clean \
-            && useradd -m -d /home/container container \
+            && useradd -d /home/container -m container \
             && cd /home/container
 
 USER        container
