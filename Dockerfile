@@ -11,7 +11,7 @@ MAINTAINER  Kenny B, <kenny@venatus.digital>
 RUN         dpkg --add-architecture i386 \
             && apt update \
             && apt upgrade -y \
-            && apt install -y wget software-properties-common apt-transport-https \
+            && apt install -y wget software-properties-common apt-transport-https lib32gcc1  \
             && add-apt-repository -y ppa:wine/wine-builds \
             && apt update \
             && apt install -y wine64 \
